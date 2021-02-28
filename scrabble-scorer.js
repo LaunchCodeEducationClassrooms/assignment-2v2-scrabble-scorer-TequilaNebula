@@ -40,7 +40,7 @@ function initialPrompt() {
 
 let simpleScore = function(word) {
   word = word.toUpperCase();
-  let simpleScore = '';
+  let simpleScore = 0;
 
   for (let i = 0; i < word.length; i++) {
     simpleScore++;
@@ -50,16 +50,16 @@ let simpleScore = function(word) {
 
 let vowelBonusScore = function(word) {
   word = word.toUpperCase();
-  let vowels = ['A', 'E', 'I', 'O', 'U']
-  let vowelBonusScore = '';
+  const vowels = ['A', 'E', 'I', 'O', 'U']
+  let vowelBonusScore = 0;
 
   for (let i = 0; i < word.length; i++) {
-    if (vowels.inculdes(word[i])) {
+    if (vowels.includes(word[i])) {
       vowelBonusScore = vowelBonusScore += 3;
     } else {
       vowelBonusScore = vowelBonusScore += 1;
     }
-  }
+  };
   return vowelBonusScore;
 }
 
