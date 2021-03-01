@@ -79,17 +79,17 @@ const scoringAlgorithms = [
   {
     name: 'Simple Score',
     description: 'Each letter is worth 1 point.',
-    scorerFunction: simpleScore
+    scoringFunction: simpleScore
   },
   {
     name: 'Bonus Vowels',
     description: 'Vowels are worth 3 pts, consonants are 1 pt.',
-    scorerFunction: vowelBonusScore
+    scoringFunction: vowelBonusScore
   },
   {
     name: 'Scrabble',
     description: 'The traditonal scoring algorithm.',
-    scorerFunction: scrabbleScore
+    scoringFunction: scrabbleScore
   }
 ];
 
@@ -101,11 +101,11 @@ function scorerPrompt(word) {
   \nPlease enter 0, 1, or 2: `);
 
   if (numberInput === '0') {
-    return (`Score for ${word}: ${scoringAlgorithms[0].scorerFunction(word)}`);
+    return (`Score for ${word}: ${scoringAlgorithms[0].scoringFunction(word)}`);
   } else if (numberInput === '1') {
-    return (`Score for ${word}: ${scoringAlgorithms[1].scorerFunction(word)}`);
+    return (`Score for ${word}: ${scoringAlgorithms[1].scoringFunction(word)}`);
   } else if (numberInput === '2') {
-    return  (`Score for ${word}: ${scoringAlgorithms[2].scorerFunction(word)}`)
+    return  (`Score for ${word}: ${scoringAlgorithms[2].scoringFunction(word)}`)
   } else {
     console.log('Invaild number');
     scorerPrompt();
